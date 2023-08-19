@@ -29,8 +29,8 @@ enum RMCharacterStatus: String, Codable {
 }
 
 enum RMCharacterGender: String, Codable {
-    case male = "Alive"
-    case female = "Dead"
+    case male = "Male"
+    case female = "Female"
     case genderless = "Genderless"
     case unknown = "unknown"
 }
