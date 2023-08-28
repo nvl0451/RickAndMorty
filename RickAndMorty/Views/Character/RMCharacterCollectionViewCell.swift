@@ -38,6 +38,7 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubviews(imageView, nameLabel, statusLabel)
+        contentView.layer.masksToBounds = true
         setConstraints()
         setupLayer()
     }
