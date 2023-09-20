@@ -37,7 +37,7 @@ class RMEpisodeInfoCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("STFU")
+        fatalError()
     }
     
     override func prepareForReuse() {

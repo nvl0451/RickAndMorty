@@ -20,7 +20,7 @@ final class RMCharacterDetailViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("STFU")
+        fatalError()
     }
     
     // LIFECYCLE

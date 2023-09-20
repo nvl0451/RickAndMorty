@@ -40,7 +40,7 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("STFU")
+        fatalError()
     }
     
     private func setupLayer() {

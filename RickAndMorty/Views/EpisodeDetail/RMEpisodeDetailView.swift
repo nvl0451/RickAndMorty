@@ -51,7 +51,7 @@ final class RMEpisodeDetailView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("STFU")
+        fatalError()
     }
     
     private func setupConstraints() {

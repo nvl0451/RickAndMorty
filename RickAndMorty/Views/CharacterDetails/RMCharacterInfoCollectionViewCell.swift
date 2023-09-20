@@ -52,7 +52,7 @@ final class RMCharacterInfoCollectionViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("STFU")
+        fatalError()
     }
     
     private func setupConstraints() {
