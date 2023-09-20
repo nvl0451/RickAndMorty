@@ -66,6 +66,7 @@
 		1C51E3C12AB9171C00BAFB6B /* RMSearchInputViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51E3C02AB9171C00BAFB6B /* RMSearchInputViewViewModel.swift */; };
 		1C51E3C32ABA367B00BAFB6B /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51E3C22ABA367B00BAFB6B /* RMSearchOptionPickerViewController.swift */; };
 		1C51E3C62ABB8E3600BAFB6B /* RMSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51E3C52ABB8E3600BAFB6B /* RMSearchResultViewModel.swift */; };
+		1C51E3C82ABB9B2E00BAFB6B /* RMSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51E3C72ABB9B2E00BAFB6B /* RMSearchResultsView.swift */; };
 		1CE9B7FA2A8DF4F3004FF901 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9B7F92A8DF4F3004FF901 /* AppDelegate.swift */; };
 		1CE9B7FC2A8DF4F3004FF901 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9B7FB2A8DF4F3004FF901 /* SceneDelegate.swift */; };
 		1CE9B7FE2A8DF4F3004FF901 /* RMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9B7FD2A8DF4F3004FF901 /* RMTabBarController.swift */; };
@@ -133,6 +134,7 @@
 		1C51E3C02AB9171C00BAFB6B /* RMSearchInputViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchInputViewViewModel.swift; sourceTree = "<group>"; };
 		1C51E3C22ABA367B00BAFB6B /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		1C51E3C52ABB8E3600BAFB6B /* RMSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultViewModel.swift; sourceTree = "<group>"; };
+		1C51E3C72ABB9B2E00BAFB6B /* RMSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultsView.swift; sourceTree = "<group>"; };
 		1CE9B7F62A8DF4F3004FF901 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CE9B7F92A8DF4F3004FF901 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CE9B7FB2A8DF4F3004FF901 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				1C51E3B52AB9143F00BAFB6B /* RMSearchView.swift */,
 				1C51E3BA2AB9166900BAFB6B /* RMNoSearchResultsView.swift */,
 				1C51E3BE2AB916FB00BAFB6B /* RMSearchInputView.swift */,
+				1C51E3C72ABB9B2E00BAFB6B /* RMSearchResultsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				1C4D1E202A9065B600CB39E2 /* RMService.swift in Sources */,
 				1C4D1E112A90517F00CB39E2 /* RMLocation.swift in Sources */,
 				1C4D1E242A90665C00CB39E2 /* RMEndpoint.swift in Sources */,
+				1C51E3C82ABB9B2E00BAFB6B /* RMSearchResultsView.swift in Sources */,
 				1C4D1E132A90519100CB39E2 /* RMCharacter.swift in Sources */,
 				1C4D1E422A957C9D00CB39E2 /* RMImageLoader.swift in Sources */,
 				1C51E3B32AB90BC900BAFB6B /* RMLocationDetailViewViewModel.swift in Sources */,
