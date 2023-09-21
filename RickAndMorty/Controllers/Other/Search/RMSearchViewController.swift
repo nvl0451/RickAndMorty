@@ -102,4 +102,10 @@ extension RMSearchViewController: RMSearchViewDelegate {
         vc.sheetPresentationController?.prefersGrabberVisible = true
         present(vc, animated: true)
     }
+    
+    func rmSearchView(_ searchView: RMSearchView, didSelectLocation: RMLocation) {
+        let vc = RMLocationDetailViewController(location: didSelectLocation)
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
