@@ -1,13 +1,9 @@
-To be fair, you have to have a very high IQ to understand Rick and Morty. The humor is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly woven into his characterisation - his personal philosophy draws heavily from
+- Rick and Morty Info + Streaming App
 
-- Narodnaya Volya
+Get the R&M info through the Rick And Morty API Service
 
-literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realize that they're not just funny- they say something deep about LIFE. As a consequence people who dislike Rick and Morty truly ARE idiots- of course they wouldn't appreciate, for instance, the humour in Rick's existencial catchphrase
+Get the R&M episodes from the "rickandmorty" folder in the root of your Yandex Disk
 
-- "Wubba Lubba Dub Dub,"
+Paste your auth key with Disk privileges into the auth var of RMEpisodeURLGetter
 
- which itself is a cryptic reference to Turgenev's Russian epic Fathers and Sons I'm smirking right now just imagining one of those addlepated simpletons scratching their heads in confusion as Dan Harmon's genius unfolds itself on their television screens. What fools... how I pity them. 😂 And yes by the way,
-
- - I DO have a Rick and Morty tattoo.
-
- And no, you cannot see it. It's for the ladies' eyes only- And even they have to demonstrate that they're within 5 IQ points of my own (preferably lower) beforehand.
+Each episode must contain the episode code that looks like this: SxxExx (S01E01 for example) to get parsed and played 

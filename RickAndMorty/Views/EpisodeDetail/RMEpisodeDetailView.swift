@@ -12,6 +12,11 @@ protocol RMEpisodeDetailViewDelegate: AnyObject {
         _ detailView: RMEpisodeDetailView,
         didSelect character: RMCharacter
     )
+    
+    func rmEpisodeDetailView(
+        _ detailView: RMEpisodeDetailView,
+        didSelectPlay episodeCode: String
+    )
 }
 
 final class RMEpisodeDetailView: UIView {
@@ -85,6 +90,8 @@ final class RMEpisodeDetailView: UIView {
         collectionView.dataSource = self
         collectionView.register(RMEpisodeInfoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: RMEpisodeInfoCollectionViewCell.cellIdentifier)
+        collectionView.register(RMEpisodeInfoCollectionWatchButtonViewCell.self,
+                                forCellWithReuseIdentifier: RMEpisodeInfoCollectionWatchButtonViewCell.cellIdentifier)
         collectionView.register(RMCharacterCollectionViewCell.self,
                                 forCellWithReuseIdentifier: RMCharacterCollectionViewCell.cellIdentifier)
         return collectionView
@@ -109,6 +116,8 @@ extension RMEpisodeDetailView: UICollectionViewDelegate, UICollectionViewDataSou
         switch sectionType {
             case .information(let viewModels):
             return viewModels.count
+        case .watchButton(viewModel: let viewModel):
+            return 1
         case .characters(let viewModels):
             return viewModels.count
         }
@@ -131,6 +140,16 @@ extension RMEpisodeDetailView: UICollectionViewDelegate, UICollectionViewDataSou
                 fatalError()
             }
             cell.configure(with: cellViewModel)
+            return cell
+        case .watchButton(viewModel: let viewModel):
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: RMEpisodeInfoCollectionWatchButtonViewCell.cellIdentifier,
+                for: indexPath
+            ) as? RMEpisodeInfoCollectionWatchButtonViewCell else {
+                fatalError()
+            }
+            cell.configure(with: viewModel)
+            cell.delegate = self
             return cell
         case .characters(let viewModels):
             let cellViewModel = viewModels[indexPath.row]
@@ -160,6 +179,8 @@ extension RMEpisodeDetailView: UICollectionViewDelegate, UICollectionViewDataSou
         switch sectionType {
             case .information:
             break
+            case .watchButton:
+            break
             case .characters:
             guard let character = viewModel.character(at: indexPath.row) else {
                 return
@@ -178,7 +199,7 @@ extension RMEpisodeDetailView {
         }
         
         switch sections[section] {
-        case .information:
+        case .information, .watchButton:
             return createInfoLayout()
         case .characters:
             return createCharacterLayout()
@@ -215,5 +236,11 @@ extension RMEpisodeDetailView {
         )
         let section = NSCollectionLayoutSection(group: group)
         return section
+    }
+}
+
+extension RMEpisodeDetailView: RMEpisodeInfoCollectionWatchButtonViewCellDelegate {
+    func rmEpisodeWatchButton(_ watchButton: RMEpisodeInfoCollectionWatchButtonViewCell, episodeCode: String) {
+        delegate?.rmEpisodeDetailView(self, didSelectPlay: episodeCode)
     }
 }

@@ -26,6 +26,7 @@ final class RMEpisodeDetailViewViewModel {
     
     enum SectionType {
         case information(viewModels: [RMEpisodeInfoCollectionViewCellViewModel])
+        case watchButton(viewModel: RMEpisodeInfoCollectionWatchButtonViewCellViewModel)
         case characters(viewModel: [RMCharacterCollectionViewCellViewModel])
     }
     
@@ -78,6 +79,7 @@ final class RMEpisodeDetailViewViewModel {
                 .init(title: "Episode", value: episode.episode),
                 .init(title: "Record Created", value: createdString)
             ]),
+            .watchButton(viewModel: .init(episodeCode: episode.episode)),
             .characters(viewModel: characters.compactMap({
                 return RMCharacterCollectionViewCellViewModel(
                     characterName: $0.name,

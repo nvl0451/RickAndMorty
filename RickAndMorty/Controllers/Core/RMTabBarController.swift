@@ -21,16 +21,19 @@ final class RMTabBarController: UITabBarController {
         let locationsVC = RMLocationViewController()
         let episodesVC = RMEpisodeViewController()
         let settingsVC = RMSettingsViewController()
+        let streamingVC = RMStreamingViewController()
         
         charactersVC.navigationItem.largeTitleDisplayMode = .automatic
         locationsVC.navigationItem.largeTitleDisplayMode = .automatic
         episodesVC.navigationItem.largeTitleDisplayMode = .automatic
         settingsVC.navigationItem.largeTitleDisplayMode = .automatic
+        streamingVC.navigationItem.largeTitleDisplayMode = .never
         
         let nav1 = UINavigationController(rootViewController: charactersVC)
         let nav2 = UINavigationController(rootViewController: locationsVC)
         let nav3 = UINavigationController(rootViewController: episodesVC)
         let nav4 = UINavigationController(rootViewController: settingsVC)
+        let nav5 = UINavigationController(rootViewController: streamingVC)
         
         nav1.tabBarItem = UITabBarItem(title: "Characters",
                                        image: UIImage(systemName: "person"),
@@ -44,13 +47,17 @@ final class RMTabBarController: UITabBarController {
         nav4.tabBarItem = UITabBarItem(title: "Settings",
                                        image: UIImage(systemName: "gear"),
                                        tag: 4)
+        nav5.tabBarItem = UITabBarItem(title: "Watch",
+                                       image: UIImage(systemName: "play.circle"),
+                                       tag: 5)
+        
         
         for nav in [nav1, nav2, nav3, nav4] {
             nav.navigationBar.prefersLargeTitles = true
         }
         
         setViewControllers(
-            [nav1, nav2, nav3, nav4],
+            [nav1, nav2, nav3, nav5, nav4],
             animated: true
         )
     }

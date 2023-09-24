@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailViewViewModelDelegate, RMEpisodeDetailViewDelegate {
     
@@ -60,6 +61,21 @@ final class RMEpisodeDetailViewController: UIViewController, RMEpisodeDetailView
         vc.title = character.name
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func rmEpisodeDetailView(_ detailView: RMEpisodeDetailView, didSelectPlay episodeCode: String) {
+        Task {
+            let url = await RMEpisodeUrlGetter.shared.getEpisodeDownloadUrl(episodeCode: episodeCode)
+            
+            if let url = url {
+                let player = AVPlayer(url: url)
+                let vc = AVPlayerViewController()
+                vc.player = player
+                self.present(vc, animated: true) {
+                    vc.player?.play()
+                }
+            }
+        }
     }
 }
 

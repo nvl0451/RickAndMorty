@@ -138,9 +138,10 @@ extension RMEpisodeListViewViewModel: UICollectionViewDataSource {
             fatalError("Unsupported Cell")
         }
         
-        guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                     withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier,
-                                                                           for: indexPath) as? RMFooterLoadingCollectionReusableView else {
+        guard let footer = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier,
+            for: indexPath) as? RMFooterLoadingCollectionReusableView else {
             fatalError("Unsupported")
         }
         footer.startAnimating()
